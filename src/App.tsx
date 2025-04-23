@@ -184,7 +184,9 @@ function App() {
 
   return (
     <>
-      <canvas ref={canvasRef} className="glitch-canvas" />
+      <div className="d-flex justify-center">
+        <canvas ref={canvasRef} className="glitch-canvas" />
+      </div>
 
       <div className="control-panel">
         <div className="panel-left">
