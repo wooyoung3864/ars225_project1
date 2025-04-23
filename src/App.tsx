@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const AVAILABLE_IMAGES = ["/project1/bsod.jpg", "/project1/google_404.png", "project1/xp_bliss.png"];
+const PUBLIC_FOLDER = '/project1/';
+
+const AVAILABLE_IMAGES = [
+  `${PUBLIC_FOLDER}bsod.jpg`,
+  `${PUBLIC_FOLDER}google_404.png`,
+  `${PUBLIC_FOLDER}xp_bliss.png`
+];
 
 function App() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
