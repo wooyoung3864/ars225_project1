@@ -7,7 +7,7 @@
 
 .glitch-canvas {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: block;
   cursor: default;
   background: black;
