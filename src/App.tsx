@@ -56,15 +56,14 @@ function App() {
       const image = imgRef.current!;
       const aspectRatio = image.width / image.height;
 
-      const maxWidth = window.innerWidth;
-      const maxHeight = window.innerHeight;
+      const maxW = window.innerWidth;
+      const maxH = window.innerHeight;
 
-      let width = maxWidth;
+      let width = maxW;
       let height = width / aspectRatio;
 
-      // If height exceeds viewport, scale based on height instead
-      if (height > maxHeight) {
-        height = maxHeight;
+      if (height > maxH) {
+        height = maxH;
         width = height * aspectRatio;
       }
 
