@@ -6,8 +6,8 @@ const BASE = import.meta.env.BASE_URL;
 const AVAILABLE_IMAGES = [
   `${BASE}bsod.jpg`,
   `${BASE}google_404.png`,
-  `${BASE}xp_bliss.png`,
-  `${BASE}Windows_9X_BSOD.png`,
+  `${BASE}xp_bliss.png` //,
+  // `${BASE}Windows_9X_BSOD.png`,
 ];
 
 function App() {
@@ -56,6 +56,23 @@ function App() {
 
     img.onload = () => {
       imgRef.current = img;
+
+      const canvas = canvasRef.current!;
+      const aspectRatio = img.width / img.height;
+
+      // Set internal resolution to match screen width
+      const maxWidth = window.innerWidth;
+      const maxHeight = window.innerHeight;
+
+      canvas.width = maxWidth;
+      canvas.height = maxWidth / aspectRatio;
+
+      // If canvas height exceeds viewport, scale down
+      if (canvas.height > maxHeight) {
+        canvas.height = maxHeight;
+        canvas.width = maxHeight * aspectRatio;
+      }
+
       drawClean();
 
       const allTypes: (() => void)[] = [];
