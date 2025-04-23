@@ -60,18 +60,34 @@ function App() {
       const canvas = canvasRef.current!;
       const aspectRatio = img.width / img.height;
 
-      // Set internal resolution to match screen width
       const maxWidth = window.innerWidth;
       const maxHeight = window.innerHeight;
 
-      canvas.width = maxWidth;
-      canvas.height = maxWidth / aspectRatio;
+      const viewportW = window.innerWidth;
+      const viewportH = window.innerHeight;
 
-      // If canvas height exceeds viewport, scale down
-      if (canvas.height > maxHeight) {
-        canvas.height = maxHeight;
-        canvas.width = maxHeight * aspectRatio;
+      let drawWidth = maxWidth;
+      let drawHeight = drawWidth / aspectRatio;
+
+      if (drawHeight > maxHeight) {
+        drawHeight = maxHeight;
+        drawWidth = drawHeight * aspectRatio;
       }
+
+      // Set internal resolution for rendering
+      canvas.width = drawWidth;
+      canvas.height = drawHeight;
+
+      // Set external CSS size for layout
+      canvas.style.width = `${drawWidth}px`;
+      canvas.style.height = `${drawHeight}px`;
+
+      // 👇 This is the magic line you asked for
+      const horizontalPadding = Math.max((viewportW - drawWidth) / 2, 0);
+      const verticalPadding = Math.max((viewportH - drawHeight) / 4, 0);
+      canvas.style.marginLeft = `${horizontalPadding}px`;
+      canvas.style.marginTop = `${verticalPadding}px`;
+      canvas.style.marginBottom = `${verticalPadding}px`;
 
       drawClean();
 
@@ -80,7 +96,6 @@ function App() {
       if (enabledEffects.vertical) allTypes.push(glitchVerticalLine);
       if (enabledEffects.pixels) allTypes.push(glitchPixels);
       if (enabledEffects.rgb) allTypes.push(glitchRGB);
-
       glitchTypesRef.current = allTypes;
     };
 
