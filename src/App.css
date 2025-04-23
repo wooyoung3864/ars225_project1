@@ -6,9 +6,10 @@
 }
 
 .glitch-canvas {
-  width: 100%;
-  height: auto;
   display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
   cursor: default;
   background: black;
 }
