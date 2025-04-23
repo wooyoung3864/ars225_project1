@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const ASSETS_FOLDER = '/ars225_project1/assets/';
+// const ASSETS_FOLDER = '/ars225_project1/assets/';
 
 const AVAILABLE_IMAGES = [
-  `${ASSETS_FOLDER}bsod.jpg`,
-  `${ASSETS_FOLDER}google_404.png`,
-  `${ASSETS_FOLDER}xp_bliss.png`
+  `bsod.jpg`,
+  `google_404.png`,
+  `xp_bliss.png`
 ];
 
 function App() {
