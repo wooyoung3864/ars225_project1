@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const ASSETS_FOLDER = '/assets/';
+const ASSETS_FOLDER = '/ars225_project1/assets/';
 
 const AVAILABLE_IMAGES = [
   `${ASSETS_FOLDER}bsod.jpg`,
