@@ -1,0 +1,48 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.glitch-canvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  cursor: default;
+  background: black;
+}
+
+.control-panel {
+  position: fixed;
+  box-sizing: border-box;
+  background: none;
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+.panel-left,
+.panel-center,
+.panel-right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #444;
+  background: #222;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button.active {
+  background: #66aaff;
+}
