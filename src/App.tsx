@@ -5,8 +5,8 @@ const ASSETS_FOLDER = '/assets/';
 
 const AVAILABLE_IMAGES = [
   `${ASSETS_FOLDER}bsod.jpg`,
-  `${ASSETS_FOLDER}`,
-  `${ASSETS_FOLDER}`
+  `${ASSETS_FOLDER}google_404.png`,
+  `${ASSETS_FOLDER}xp_bliss.png`
 ];
 
 function App() {
