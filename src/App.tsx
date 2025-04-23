@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-// const ASSETS_FOLDER = '/ars225_project1/assets/';
+const BASE = import.meta.env.BASE_URL;
 
 const AVAILABLE_IMAGES = [
-  `bsod.jpg`,
-  `google_404.png`,
-  `xp_bliss.png`
+  `${BASE}bsod.jpg`,
+  `${BASE}google_404.png`,
+  `${BASE}xp_bliss.png`,
+  `${BASE}Windows_9X_BSOD.png`,
 ];
 
 function App() {
