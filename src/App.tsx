@@ -184,7 +184,7 @@ function App() {
 
   return (
     <>
-      <div className="center">
+      <div className="d-flex justify-center">
         <canvas ref={canvasRef} className="glitch-canvas" />
       </div>
 
