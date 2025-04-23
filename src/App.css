@@ -20,6 +20,11 @@ html, body {
   background: black;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+}
+
 .control-panel {
   position: fixed;
   box-sizing: border-box;
