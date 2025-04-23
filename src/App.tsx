@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 const AVAILABLE_IMAGES = [
-  `/bsod.jpg`,
-  `/google_404.png`,
-  `/xp_bliss.png`
+  import.meta.env.BASE_URL + `bsod.jpg`,
+  import.meta.env.BASE_URL + `google_404.png`,
+  import.meta.env.BASE_URL + `xp_bliss.png`
 ];
 
 function App() {
