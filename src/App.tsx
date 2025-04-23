@@ -51,36 +51,29 @@ function App() {
       setGlitchLevel(0);
     };
 
-    const resizeCanvasToFit = () => {
-      const canvas = canvasRef.current!;
-      const image = imgRef.current!;
-      const aspectRatio = image.width / image.height;
-
-      const maxW = window.innerWidth;
-      const maxH = window.innerHeight;
-
-      let width = maxW;
-      let height = width / aspectRatio;
-
-      if (height > maxH) {
-        height = maxH;
-        width = height * aspectRatio;
-      }
-
-      canvas.width = width;
-      canvas.height = height;
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-
-      drawClean();
-    };
-
     const img = new Image();
     img.src = imageSrc;
 
     img.onload = () => {
       imgRef.current = img;
-      resizeCanvasToFit();
+
+      const canvas = canvasRef.current!;
+      const aspectRatio = img.width / img.height;
+
+      // Set internal resolution to match screen width
+      const maxWidth = window.innerWidth;
+      const maxHeight = window.innerHeight;
+
+      canvas.width = maxWidth;
+      canvas.height = maxWidth / aspectRatio;
+
+      // If canvas height exceeds viewport, scale down
+      if (canvas.height > maxHeight) {
+        canvas.height = maxHeight;
+        canvas.width = maxHeight * aspectRatio;
+      }
+
+      drawClean();
 
       const allTypes: (() => void)[] = [];
       if (enabledEffects.horizontal) allTypes.push(glitchHorizontalLine);
@@ -184,9 +177,7 @@ function App() {
 
   return (
     <>
-      <div className="d-flex justify-center">
-        <canvas ref={canvasRef} className="glitch-canvas" />
-      </div>
+      <canvas ref={canvasRef} className="glitch-canvas" />
 
       <div className="control-panel">
         <div className="panel-left">
