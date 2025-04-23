@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const PUBLIC_FOLDER = '/project1/public';
+const PUBLIC_FOLDER = '/project1/public/';
 
 const AVAILABLE_IMAGES = [
   `${PUBLIC_FOLDER}bsod.jpg`,
