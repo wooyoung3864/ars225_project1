@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
-const PUBLIC_FOLDER = '/project1/public';
-
 const AVAILABLE_IMAGES = [
-  `${PUBLIC_FOLDER}/bsod.jpg`,
-  `${PUBLIC_FOLDER}/google_404.png`,
-  `${PUBLIC_FOLDER}/xp_bliss.png`
+  `/bsod.jpg`,
+  `/google_404.png`,
+  `/xp_bliss.png`
 ];
 
 function App() {
